@@ -1,3 +1,4 @@
+Group Member: Ashley Mckoy
 ## Environment Setup
 
 ### Docker
