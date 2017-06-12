@@ -25,3 +25,5 @@ Run `docker-compose up` to run the servers.
 Victoria Velazquez
 
 Pranaya Adhikari
+
+Kyle Frederick
