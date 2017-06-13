@@ -21,8 +21,15 @@ Run `docker-compose build` to build the images.
 Add `127.0.0.1 frontend.howard.test` and `127.0.0.1 backend.howard.test` to `/etc/hosts`.
 
 Run `docker-compose up` to run the servers.
+
+<<<<<<< HEAD
+Pranaya Adhikari
+
+Trying to see if there is a merge conflict
+=======
 Victoria Velazquez
 
 Pranaya Adhikari
 
-Trying to see if there is a merge conflict
+Kyle Frederick
+>>>>>>> c5e7124cd3785f75800fcdb31e81e00f8a0a3192
