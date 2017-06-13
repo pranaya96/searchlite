@@ -22,8 +22,14 @@ Add `127.0.0.1 frontend.howard.test` and `127.0.0.1 backend.howard.test` to `/et
 
 Run `docker-compose up` to run the servers.
 
+
 Victoria Velazquez was here
 
-Pranaya Adhikari
+Victoria Velazquez
+Ashley Mckoy
 
+Pranaya Adhikari
 Kyle Frederick
+Kevin Lei
+KyleFrederick2
+
