@@ -27,3 +27,5 @@ Victoria Velazquez
 Pranaya Adhikari
 
 Kyle Frederick
+
+Kevin Lei
