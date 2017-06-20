@@ -1,20 +1,22 @@
 <form>
+  <div class="center">
 <h1>
-  Search Lite
+  <img src="https://userscontent2.emaze.com/images/1ae2a255-0135-4727-9f83-863640328563/07707631865fcc427933d5922137ba3a.gif" width= "300">
+  <img src="https://snag.gy/ZNWIUG.jpg" width="400px">
 </h1>
 <p>
-  You just searched for {{term}} and the result is {{result}}
 </p>
 
 <md-input-container>
   <input mdInput
          [(ngModel)]="term"
          name="term"
-         placeholder="term"
+         placeholder="Search qWest.."
          type="text"
          required>
 </md-input-container>
 <button md-raised-button (click)="search()">
   Search
 </button>
+</div>
 </form>
