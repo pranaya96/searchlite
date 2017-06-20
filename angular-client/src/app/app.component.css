@@ -1,6 +1,6 @@
 .center {
     margin: auto;
-    height: 200px;
+    height: 450px;
     line-height: normal;
     width: 200px;
     position: absolute;
@@ -35,4 +35,8 @@ input[type=text] {
 /* When the input field gets focus, change its width to 100% */
 input[type=text]:focus {
     width: 100%;
+}
+
+h2{
+  color: white;
 }

@@ -3,6 +3,7 @@ package howard.west;
 import com.google.gson.Gson;
 import howard.west.dto.ResultDTO;
 import lombok.extern.slf4j.Slf4j;
+import java.util.*;
 
 import static spark.Spark.before;
 import static spark.Spark.get;
@@ -51,6 +52,18 @@ public class App {
     //GSON is used to map to json.
     Gson gson = new Gson();
 
+    
+    List<String, String> dummyList1 = new ArrayList<String, String>();
+    List<String, String> dummyList2 = new ArrayList<String, String>();
+    Map<String, List> dummyData = new TreeMap<String, ArrayList>();
+    
+    dummyList1.add("https://en.wikipedia.org/wiki/Nepal");
+    dummyList1.add("Nepal is a beautiful country. Everest is in Nepal.");
+    dummyList2.add("https://en.wikipedia.org/wiki/United_States");
+    dummyList2.add("America is the biggest economy of the world.");
+    dummyData.put("Nepal", dummyList1);
+    dummyData.put("America", dummyList2);
+
 
 
     //the route callback is a lambda function
@@ -59,9 +72,10 @@ public class App {
       return "Welcome to Howard West!";
     });
     get(
-      "/search",
-      "application/json",
-      (req, res) -> ResultDTO.builder().term(req.queryMap("q").value()),
+      "/search", //route
+      "application/json", //return GET
+      (req, res) -> ResultDTO.builder().term(dummyData.get(req.queryMap("q").value()),
       gson::toJson); // <- this is called a method reference
   }
+
 }
