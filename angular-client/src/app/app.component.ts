@@ -10,7 +10,7 @@ import { SearchService } from './search.service';
 export class AppComponent {
   term: string;
   result: string;
-
+  title = 'Got qWest?'
   constructor(private searchService: SearchService) {}
 
   search() {
