@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule } from '@angular/http';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { MdButtonModule, MdInputModule } from '@angular/material';
+import { MdButtonModule, MdInputModule, MdListModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SearchService } from './search.service';
 
@@ -17,7 +17,8 @@ import { AppComponent } from './app.component';
     BrowserAnimationsModule,
     FormsModule,
     MdInputModule,
-    HttpModule
+    HttpModule,
+    MdListModule,
   ],
   providers: [SearchService],
   bootstrap: [AppComponent]
