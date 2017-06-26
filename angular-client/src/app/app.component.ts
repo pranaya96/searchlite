@@ -9,14 +9,23 @@ import { SearchService } from './search.service';
 
 export class AppComponent {
   term: string;
-  result: string;
+  results: string[];
   title = 'Got qWest?'
   constructor(private searchService: SearchService) {}
 
   search() {
-    this.searchService.search(this.term)
-      .subscribe(data => {
-        this.result = JSON.stringify(data);
-      });
+    if (this.term === 'dog')
+    {
+      this.results = ['file1.pdf'];
+    }
+    if (this.term == 'Nepal')
+    {
+      this.results = ['Nepal is a great place'];
+    }
+    if (this.term == 'America')
+    {
+      this.results = ['Some link to America'];
+      }
+    
   }
 }
