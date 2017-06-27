@@ -8,8 +8,8 @@
         <md-toolbar-row>
             <span>Home</span>
             <span class="example-spacer"></span>
-            <md-icon class="example-icon">favorite</md-icon>
-
+            <i class="material-icons">home</i>
+            <i class="material-icons">account_box</i>
           </md-toolbar-row>
     </md-toolbar>
 
@@ -22,11 +22,12 @@
          type="text"
          align="middle"
          required>
+         <button  md-raised-button (click)="search()">
+           <a href="ResultsPage.html">Search</a>
+         </button>
 </md-input-container>
 
-<button  md-raised-button (click)="search()">
-  <a href="ResultsPage.html">Search</a>
-</button>
+
 </div>
 
 </div>
