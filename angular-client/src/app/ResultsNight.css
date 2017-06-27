@@ -1,9 +1,7 @@
 html, body{
   min-height:100%;
   text-align:center;
-  background-color: #FFD700;
 }
-
 
 h1{
   text-align:center;
@@ -12,6 +10,7 @@ h1{
 .jumbotron{
   padding: 30px;
   text-align:center;
+  color: black
 }
 #help{
   text-align:center;
