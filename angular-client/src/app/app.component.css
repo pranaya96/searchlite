@@ -12,11 +12,13 @@
 }
 .middle {
   position: absolute;
-     left: 50%;
-     top: 75%;
+  display: flex;
+  align-items: center;
+     left: 35%;
+     top: 80%;
      margin-top: -11px;
      margin-left: -75px;
-     width: auto;
+     width: 180%;
      height: 22px;
 
 }
@@ -35,10 +37,11 @@
 }
 /*Search bar*/
 input[type=text] {
-    width: 100%;
-    padding: 10px 15px 10px 40px;
+    width: 150%;
+    padding: 25px 30px;
     background: white;
     color:black;
+    box-shadow: 10px 10px 10px 1px rgba(0, 0, 0, 0.5);
     -webkit-transition: width 0.4s ease-in-out;
     transition: width 0.4s ease-in-out;
 }
