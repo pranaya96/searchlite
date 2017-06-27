@@ -1,22 +1,31 @@
-<form>
-  <div class="center">
+<div class="center">
 <h1>
   <img src="http://img.ctrlv.in/img/17/06/25/5950401a82ce9.png" width="350px" align="middle">
 </h1>
-<p>
-</p>
+</div>
 
-<md-input-container>
+<form>
+  <div>
+
+<md-toolbar color="black">
+        <span>Home</span>
+        <span class="example-spacer"></span>
+      <md-icon class="example-icon">favorite</md-icon>
+      <md-icon class="example-icon">delete</md-icon>
+    </md-toolbar>
+<md-input-container >
   <input mdInput
          [(ngModel)]="term"
          name="term"
-         placeholder="Search qWest.."
+         placeholder="I'm Ready..."
          type="text"
+         align="middle"
          required>
 </md-input-container>
 <button md-raised-button (click)="search()">
   Search
 </button>
+
 <div><h2>Results</h2></div>
 <div>
   <md-list>
