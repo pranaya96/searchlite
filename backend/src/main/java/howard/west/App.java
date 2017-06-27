@@ -53,16 +53,16 @@ public class App {
     Gson gson = new Gson();
 
     
-    List<String, String> dummyList1 = new ArrayList<String, String>();
-    List<String, String> dummyList2 = new ArrayList<String, String>();
-    Map<String, List> dummyData = new TreeMap<String, ArrayList>();
+    // List<String, String> dummyList1 = new ArrayList<String, String>();
+    // List<String, String> dummyList2 = new ArrayList<String, String>();
+    // Map<String, List> dummyData = new TreeMap<String, ArrayList>();
     
-    dummyList1.add("https://en.wikipedia.org/wiki/Nepal");
-    dummyList1.add("Nepal is a beautiful country. Everest is in Nepal.");
-    dummyList2.add("https://en.wikipedia.org/wiki/United_States");
-    dummyList2.add("America is the biggest economy of the world.");
-    dummyData.put("Nepal", dummyList1);
-    dummyData.put("America", dummyList2);
+    // dummyList1.add("https://en.wikipedia.org/wiki/Nepal");
+    // dummyList1.add("Nepal is a beautiful country. Everest is in Nepal.");
+    // dummyList2.add("https://en.wikipedia.org/wiki/United_States");
+    // dummyList2.add("America is the biggest economy of the world.");
+    // dummyData.put("Nepal", dummyList1);
+    // dummyData.put("America", dummyList2);
 
 
 
@@ -74,8 +74,7 @@ public class App {
     get(
       "/search", //route
       "application/json", //return GET
-      (req, res) -> ResultDTO.builder().term(dummyData.get(req.queryMap("q").value()),
+      (req, res) -> ResultDTO.builder().term(req.queryMap("q").value()),
       gson::toJson); // <- this is called a method reference
   }
-
 }
