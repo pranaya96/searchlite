@@ -1,0 +1,42 @@
+html, body{
+  min-height:100%;
+
+
+  text-align:center;
+
+}
+
+h1{
+  text-align:center;
+  font-family:'Roboto';
+  
+}
+.jumbotron{
+  padding: 30px;
+  text-align:center;
+}
+#help{
+  text-align:center;
+  font-family:'Roboto';
+}
+form{
+	display:inline;
+}
+nav{
+	text-align:center;
+display:inline-block;
+}
+input
+{
+	border-radius:8px;
+}
+#inside{
+text-align:center;
+display:inline-block;
+}
+#cards{
+  border-radius: 1px;
+}
+footer{
+  text-align:center;
+}
