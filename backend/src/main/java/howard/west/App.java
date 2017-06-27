@@ -74,8 +74,7 @@ public class App {
     get(
       "/search", //route
       "application/json", //return GET
-      (req, res) -> ResultDTO.builder().term(req.queryMap("q").value(),
+      (req, res) -> ResultDTO.builder().term(req.queryMap("q").value()),
       gson::toJson); // <- this is called a method reference
   }
-
 }
