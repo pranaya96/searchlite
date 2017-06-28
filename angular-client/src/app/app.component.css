@@ -45,6 +45,7 @@ input[type=text] {
     -webkit-transition: width 0.4s ease-in-out;
     transition: width 0.4s ease-in-out;
 }
+input::-webkit-input-placeholder { font-size: 16pt; color: #555; }
 
 /* When the input field gets focus, change its width to 100% */
 input[type=text]:focus {
