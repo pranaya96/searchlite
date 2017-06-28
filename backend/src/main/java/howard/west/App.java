@@ -61,7 +61,7 @@ public class App {
     get(
       "/search",
       "application/json",
-      (req, res) -> ResultDTO.builder().term(req.queryMap("q").value()),
+      (req, res) -> ResultDTO.builder().term(req.queryMap("q").value() + "results"),
       gson::toJson); // <- this is called a method reference
   }
 }
