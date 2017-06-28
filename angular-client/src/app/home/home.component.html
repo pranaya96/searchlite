@@ -1,6 +1,5 @@
 <form>
-<div>
-<md-toolbar color="accent">
+    <md-toolbar color="accent">
         <span><img src="http://img.ctrlv.in/img/17/06/25/5950401a82ce9.png"></span>
         <span class="example-spacer"></span>
         <md-toolbar-row>
@@ -10,23 +9,18 @@
             <i class="material-icons">account_box</i>
           </md-toolbar-row>
     </md-toolbar>
-
-<div class="middle">
-<md-input-container >
-  <input mdInput
-         [(ngModel)]="term"
-         name="term"
-         placeholder="I'm Ready..."
-         type="text"
-         align="middle"
-         required>
-         <button  md-raised-button (click)="search()">
-           <!-- <a href="Results">Search</a> -->
-         </button>
-</md-input-container>
-
-
-</div>
-
-</div>
+    <div class="middle">
+        <md-input-container >
+          <input mdInput
+                 [(ngModel)]="term"
+                 name="term"
+                 placeholder="I'm Ready..."
+                 type="text"
+                 align="middle"
+                 required>
+                 <button  md-raised-button (click)="search()">
+                    <a [routerLink]="['/results']">Search</a>
+                 </button>
+        </md-input-container>
+    </div>
 </form>
