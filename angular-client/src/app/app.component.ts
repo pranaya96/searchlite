@@ -11,7 +11,7 @@ import { SearchService } from './search.service';
 
 
 export class AppComponent {
-  term: string;
+  /*term: string;
   results: string[];
   title = 'Got qWest?'
   constructor(private searchService: SearchService) {}
@@ -28,7 +28,8 @@ export class AppComponent {
     if (this.term == 'America')
     {
       this.results = ['Some link to America'];
-      }
+    }
+    
 
-  }
+  }*/
 }
