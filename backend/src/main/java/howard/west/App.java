@@ -53,11 +53,9 @@ public class App {
     //GSON is used to map to json.
     Gson gson = new Gson();
 
-    String path = "output";
-    try {
-    String argsIndex[] = {"Basic", "data", path};
-    Index.mainIndex(argsIndex);
-    } catch (Exception e) {}
+    String indexPath = "output/index";
+    // TODO: Copy your full sized generated index to this path and uncomment this line:
+    // String indexPath = "output/index";
 
     //the route callback is a lambda function
     get("/", (req, res) -> {
@@ -67,7 +65,7 @@ public class App {
     get(
       "/search",
       "application/json",
-      (req, res) -> Query.mainQuery(path, req.queryMap("q").value()),
+      (req, res) -> Query.mainQuery(indexPath, req.queryMap("q").value()),
       gson::toJson); // <- this is called a method reference
 
   }
