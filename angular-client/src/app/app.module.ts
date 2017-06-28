@@ -8,14 +8,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SearchService } from './search.service';
 import { AppComponent } from './app.component';
 import {DomSanitizer} from '@angular/platform-browser';
-import { ResultsComponent } from './results/results.component';
+
 import { RouterModule, Routes} from '@angular/router';
+
 import { HomeComponent } from './home/home.component';
+import { ResultsComponent } from './results/results.component';
 
 
 const appRoutes: Routes = [
 
-  {path: 'home', component: HomeComponent},
+  {path: '', component: HomeComponent},
   {path: 'results', component: ResultsComponent}
   
 ]
