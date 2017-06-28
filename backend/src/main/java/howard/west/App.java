@@ -2,6 +2,8 @@ package howard.west;
 
 import com.google.gson.Gson;
 import howard.west.dto.ResultDTO;
+import howard.west.cs276.assignments.Index;
+import howard.west.cs276.assignments.Query;
 import lombok.extern.slf4j.Slf4j;
 
 import static spark.Spark.before;
@@ -51,17 +53,23 @@ public class App {
     //GSON is used to map to json.
     Gson gson = new Gson();
 
-
+    String path = "output";
+    try {
+    String argsIndex[] = {"Basic", "data", path};
+    Index.mainIndex(argsIndex);
+    } catch (Exception e) {}
 
     //the route callback is a lambda function
     get("/", (req, res) -> {
       log.info("Loading the index");
-      return "Welcome to Howard West!";
+      return "hello world";
     });
     get(
       "/search",
       "application/json",
-      (req, res) -> ResultDTO.builder().term(req.queryMap("q").value()),
+      // (req, res) -> ResultDTO.builder().term(req.queryMap("q").value()),
+      (req, res) -> Query.mainQuery(path, req.queryMap("q").value()),
       gson::toJson); // <- this is called a method reference
+
   }
 }
