@@ -2,6 +2,8 @@ package howard.west;
 
 import com.google.gson.Gson;
 import howard.west.dto.ResultDTO;
+import howard.west.cs276.assignments.Index;
+import howard.west.cs276.assignments.Query;
 import lombok.extern.slf4j.Slf4j;
 import java.util.*;
 
@@ -52,29 +54,27 @@ public class App {
     //GSON is used to map to json.
     Gson gson = new Gson();
 
-    
-    // List<String, String> dummyList1 = new ArrayList<String, String>();
-    // List<String, String> dummyList2 = new ArrayList<String, String>();
-    // Map<String, List> dummyData = new TreeMap<String, ArrayList>();
-    
-    // dummyList1.add("https://en.wikipedia.org/wiki/Nepal");
-    // dummyList1.add("Nepal is a beautiful country. Everest is in Nepal.");
-    // dummyList2.add("https://en.wikipedia.org/wiki/United_States");
-    // dummyList2.add("America is the biggest economy of the world.");
-    // dummyData.put("Nepal", dummyList1);
-    // dummyData.put("America", dummyList2);
-
+    String indexPath = "output/tiny-index";
+    // TODO: Copy your full sized generated index to this path and uncomment this line:
+    // String indexPath = "output/index";
 
 
     //the route callback is a lambda function
     get("/", (req, res) -> {
       log.info("Loading the index");
-      return "Welcome to Howard West!";
+      return "hello world";
     });
     get(
+
       "/search", //route
       "application/json", //return GET
       (req, res) -> ResultDTO.builder().term(req.queryMap("q").value()),
+
+      "/search",
+      "application/json",
+      (req, res) -> Query.mainQuery(indexPath, req.queryMap("q").value()),
+
       gson::toJson); // <- this is called a method reference
+
   }
 }
