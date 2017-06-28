@@ -27,7 +27,7 @@
 
 <body background="../../Images/uSFlts.jpg">
 
-<header>
+<header >
 		<h1>
 		<!--<img src="/Users/kfredrick/searchlite/angular-client/Sponge.jpg" width="100px" height="100px"  />-->
 		<a href = "../app/app.component.html"> 
@@ -35,30 +35,41 @@
 </a>		
 		</h1>
 
+<button id="night" onclick= "dark()" class= "waves-effect waves-light btn" align="right">
+      <i class="material-icons right">invert_colors</i> Night Mode
+    
+      </button>
+
+      <script>
+    function dark() {
+      ResultsPage.section.backgroundColor = '#333';
+    }
+    </script>
+
 
 </header>
 
-  
-<div id="inside">		
-		<form action="../app/ResultsPage.html" class= "waves-effect waves-light btn">
+  <div id="inside">
+	
+		<form id ="prev" action="../app/app.component.html" class= "waves-effect waves-light btn">
 			<i class="material-icons left">fast_rewind</i>
-    <input type="submit"  value="Previous Page" />
+    <input type="submit" align="left" value="Previous Page" />
 			</form>
 
 
-			<form action="../app/ResultsPage.html" class= "waves-effect waves-light btn">
+			<form id="next" action="../app/ResultsPage.html" class= "waves-effect waves-light btn">
 			<i class="material-icons right">fast_forward</i>
-    <input type="submit"  value="Next Page" />
+    <input type="submit" align="right"  value="Next Page" />
 			</form>
 			
-		 
-</div>        
+		 </div>
+       
 <section class= "jumbotron" >
 <div align="center">
 
  <div ng-app="">
 <p>Search: <input type="text" ng-model="name"></p>
-<p ng-bind="name"></p>
+<p ng-bind="name">You sa</p>
 
 <form action="../app/ResultsPage.html" class= "waves-effect waves-light btn">
       <i class="material-icons right">send</i>
@@ -221,13 +232,9 @@ Reports say that a student has no patience left after not receiving...
             <i class="material-icons">filter_drama</i>
 
               Scandal at Howard University??
-
 </div>
-
               <div class="collapsible-body">
-
               <span>
-
 
                Sources say that President Frederick... <form action="../app/ResultsPage.html" class= "waves-effect waves-light btn">
       <i class="material-icons right">send</i>
@@ -241,14 +248,16 @@ Reports say that a student has no patience left after not receiving...
 
           </li>
 
-
-
       </div>
 </ul>
 
   <p class="flow-text"> Did you find all that you were looking for? If so we thank you for using our search engine and we hope you use us again! :) 
   If not. then try searching again and being a little more specific :(
   </p>
+
+<a class="btn" onclick="Materialize.toast('Click on a card to get a brief comment about the page. Then click on the *GO!* button to visit the link.', 10000, 'rounded')">Help!</a>
+
+
   </section>
 </body>
 
