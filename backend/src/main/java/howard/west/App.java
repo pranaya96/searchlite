@@ -53,7 +53,7 @@ public class App {
     //GSON is used to map to json.
     Gson gson = new Gson();
 
-    String indexPath = "output/index";
+    String indexPath = "output/tiny-index";
     // TODO: Copy your full sized generated index to this path and uncomment this line:
     // String indexPath = "output/index";
 
