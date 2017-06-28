@@ -1,0 +1,67 @@
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+/* You can add global styles to this file, and also import other style files */
+html {
+  background: url(http://img.ctrlv.in/img/17/06/25/59503e29c9bad.png) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.center {
+    margin: auto;
+    height: 450px;
+    line-height: normal;
+    width: 300px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 10px;
+}
+.middle {
+  position: absolute;
+  display: flex;
+  align-items: center;
+     left: 35%;
+     top: 80%;
+     margin-top: -11px;
+     margin-left: -75px;
+     width: 180%;
+     height: 22px;
+
+}
+.top {
+  width:auto;
+  margin-top: 500px;
+  position: top;
+
+}
+.example-icon {
+  padding: 0 14px;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+/*Search bar*/
+input[type=text] {
+    width: 150%;
+    padding: 25px 30px;
+    background: white;
+    color:black;
+    box-shadow: 10px 10px 10px 1px rgba(0, 0, 0, 0.5);
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+
+/* When the input field gets focus, change its width to 100% */
+input[type=text]:focus {
+    width: 200%;
+}
+
+h2{
+  color: white;
+}

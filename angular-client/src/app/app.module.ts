@@ -8,12 +8,26 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SearchService } from './search.service';
 import { AppComponent } from './app.component';
 import {DomSanitizer} from '@angular/platform-browser';
+import { ResultsComponent } from './results/results.component';
+import { RouterModule, Routes} from '@angular/router';
+import { HomeComponent } from './home/home.component';
+
+
+const appRoutes: Routes = [
+
+  {path: 'home', component: HomeComponent},
+  {path: 'results', component: ResultsComponent}
+  
+]
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ResultsComponent,
+    HomeComponent
   ],
   imports: [
+    RouterModule.forRoot(appRoutes),
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
