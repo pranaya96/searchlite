@@ -1,0 +1,56 @@
+<header>
+  <h1>
+    <a href = "../app/app.component.html"> 
+      <img src="../../Images/title.png" style="width:200px;height:100px;">
+    </a>    
+  </h1>
+</header>
+
+  
+    <button class="md-raised-button md-ink-ripple" type="button" ng-transclude>
+ Previous Page
+<div class="md-ripple-container"></div>
+</button>
+
+      <button class="md-raised-button md-ink-ripple" type="button" ng-transclude>
+Next Page
+<div class="md-ripple-container"></div>
+</button>
+
+ <md-input-container >
+          <input mdInput
+                 [(ngModel)]="term"
+                 name="term"
+                 placeholder="Search again for..."
+                 type="text"
+                 align="middle"
+                 required>
+                 </md-input-container>
+
+
+<button class="md-raised-button md-ink-ripple" type="button" click="getSearch()">
+ Go!
+<div class="md-ripple-container"></div>
+</button>
+
+<ol >
+<md-card class="example-card" >
+  <md-card-header>
+    <div md-card-avatar class="example-header-image"></div>
+    <md-card-title>{{title}}</md-card-title>
+    <md-card-subtitle>{{myHero}}</md-card-subtitle>
+  </md-card-header>
+  <img md-card-image src="assets/img/examples/shiba2.jpg">
+  <md-card-content>
+    <p>
+      
+    </p>
+  </md-card-content>
+  <md-card-actions>
+    <button md-button>LIKE</button>
+    <button md-button>SHARE</button>
+  </md-card-actions>
+</md-card>
+</ol>
+
+

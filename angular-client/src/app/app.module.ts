@@ -9,11 +9,28 @@ import { SearchService } from './search.service';
 import { AppComponent } from './app.component';
 import {DomSanitizer} from '@angular/platform-browser';
 
+import { RouterModule, Routes} from '@angular/router';
+
+import { HomeComponent } from './home/home.component';
+import { ResultsComponent } from './results/results.component';
+import { MdCardModule } from '@angular/material';
+import { MaterialModule } from '@angular/material';
+
+const appRoutes: Routes = [
+
+  {path: '', component: HomeComponent},
+  {path: 'results', component: ResultsComponent}
+  
+]
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ResultsComponent,
+    HomeComponent
   ],
   imports: [
+    RouterModule.forRoot(appRoutes),
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
@@ -23,6 +40,8 @@ import {DomSanitizer} from '@angular/platform-browser';
     MdToolbarModule,
     MdButtonModule,
     MdIconModule,
+    MdCardModule,
+    MaterialModule,
   ],
   providers: [SearchService],
   bootstrap: [AppComponent]
