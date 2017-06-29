@@ -1,152 +1,56 @@
 <header>
-	<h1>
-		<a href = "../app/app.component.html"> 
-		  <img src="../../Images/title.png" style="width:200px;height:100px;">
-    </a>		
+  <h1>
+    <a href = "../app/app.component.html"> 
+      <img src="../../Images/title.png" style="width:200px;height:100px;">
+    </a>    
   </h1>
 </header>
 
-<div id="inside">		
-		<form action="../app/ResultsPage.html" class= "waves-effect waves-light btn">
-			<i class="material-icons left">fast_rewind</i>
-    <input type="submit"  value="Previous Page" />
-		</form>
+  
+    <button class="md-raised-button md-ink-ripple" type="button" ng-transclude>
+ Previous Page
+<div class="md-ripple-container"></div>
+</button>
 
-			<form action="../app/ResultsPage.html" class= "waves-effect waves-light btn">
-			<i class="material-icons right">fast_forward</i>
-    <input type="submit"  value="Next Page" />
-			</form>
-</div>        
-<section class= "jumbotron" >
-<div align="center">
+      <button class="md-raised-button md-ink-ripple" type="button" ng-transclude>
+Next Page
+<div class="md-ripple-container"></div>
+</button>
 
- <div ng-app="">
-<p>Search: <input type="text" ng-model="name"></p>
-<p ng-bind="name"></p>
+ <md-input-container >
+          <input mdInput
+                 [(ngModel)]="term"
+                 name="term"
+                 placeholder="Search again for..."
+                 type="text"
+                 align="middle"
+                 required>
+                 </md-input-container>
 
-<form action="../app/ResultsPage.html" class= "waves-effect waves-light btn">
-      <i class="material-icons right">send</i>
-    <input type="submit"  value="Search Again" />
-      </form>
- 
-</div>
 
-        <div id="cards" class="col s12 m6">
-          <div class="card lighten-1">
-            <div class="card-content black-text">
-              <p>6 results matching your search "scandals" were found! </p>
-            </div>
-          </div>
-        </div>
+<button class="md-raised-button md-ink-ripple" type="button" click="getSearch()">
+ Go!
+<div class="md-ripple-container"></div>
+</button>
 
-<ul id="help" class="collapsible popout" data-collapsible="accordion">
+<ol >
+<md-card class="example-card" >
+  <md-card-header>
+    <div md-card-avatar class="example-header-image"></div>
+    <md-card-title>{{title}}</md-card-title>
+    <md-card-subtitle>{{myHero}}</md-card-subtitle>
+  </md-card-header>
+  <img md-card-image src="assets/img/examples/shiba2.jpg">
+  <md-card-content>
+    <p>
+      
+    </p>
+  </md-card-content>
+  <md-card-actions>
+    <button md-button>LIKE</button>
+    <button md-button>SHARE</button>
+  </md-card-actions>
+</md-card>
+</ol>
 
-<script language ="javascript">
-$(document).ready(function(){
-    $('.collapsible').collapsible();
-  });
-  $('.collapsible').collapsible({
-    accordion: true, // A setting that doesnt change the collapsible behavior to expandable instead of the default accordion style
-    onOpen: function(el) { alert('Open'); }, // Callback for Collapsible open
-    onClose: function(el) { alert('Closed'); } // Callback for Collapsible close
-  });
-</script>
-<li>
-<div class="collapsible-header">
-            <i class="material-icons">filter_drama</i>
-              Is Google's Food Less than Spectacular?
-</div>
-              <div class="collapsible-body">
-              <span>
-Some students on campus are saying that the food...
- <form action="../app/ResultsPage.html" class= "waves-effect waves-light btn">
-      <i class="material-icons right">send</i>
-    <input type="submit"  value="Go!" />
-      </form>
-              </span>
-            </div>
-          </li>
-<li>
-          <div class="collapsible-header">
-            <i class="material-icons">filter_drama</i>
-              Fire Alarms go off in Solstice Apartments!
-</div>
-              <div class="collapsible-body">
-              <span>
-A calm evening was interrupted by the blaring sounds of...
-               <form action="../app/ResultsPage.html" class= "waves-effect waves-light btn">
-      <i class="material-icons right">send</i>
-    <input type="submit"  value="Go!" />
-      </form>
-              </span>
-            </div>
-          </li>
-<li>
-<div class="collapsible-header">
-            <i class="material-icons">filter_drama</i>
-              Howard West Student Not Receiving Stipend?
-</div>
-              <div class="collapsible-body">
-              <span>
-Reports say that a student has no patience left after not receiving...
-               <form action="../app/ResultsPage.html" class= "waves-effect waves-light btn">
-      <i class="material-icons right">send</i>
-    <input type="submit"  value="Go!" />
-      </form>
-              </span>
-            </div>
-          </li>
-<li>
-<div class="collapsible-header">
-            <i class="material-icons">filter_drama</i>
-              Can these Ping-Pong Competitors be Stopped?
-</div>
-              <div class="collapsible-body">
-              <span>
-              Everyday, these ping-pong champs go head to head fighting for the championship title! 
-               <form action="../app/ResultsPage.html" class= "waves-effect waves-light btn">
-      <i class="material-icons right">send</i>
-    <input type="submit"  value="Go!" />
-      </form>
-              </span>
-            </div>
-          </li>
-<li>
-<div class="collapsible-header">
-            <i class="material-icons">filter_drama</i>
-             Howard West Disturbing Google Workers?
-</div>
-              <div class="collapsible-body">
-              <span>
-               A strongly worded email from a long time Google employee says... <form action="../app/ResultsPage.html" class= "waves-effect waves-light btn">
-      <i class="material-icons right">send</i>
-    <input type="submit"  value="Go!" />
-      </form>
-              </span>
-            </div>
-          </li>
-<li>
-<div class="collapsible-header">
-            <i class="material-icons">filter_drama</i>
-              Scandal at Howard University??
-</div>
-              <div class="collapsible-body">
-              <span>
-               Sources say that President Frederick... <form action="../app/ResultsPage.html" class= "waves-effect waves-light btn">
-      <i class="material-icons right">send</i>
-    <input type="submit"  value="Go!" />
-      </form>
-              </span>
-            </div>
-          </li>
- 
-</ul>
-  <p class="flow-text"> Did you find all that you were looking for? If so we thank you for using our search engine and we hope you use us again! :) 
-  If not. then try searching again and being a little more specific :(
-  </p>
-  </div>
-  </section>
-  <footer background="../../Images//angular-client/11j34o.jpg" >
-    <img src="../../Images/title.png" style="width:200px;height:100px;">
 
-      </footer>

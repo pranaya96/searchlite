@@ -13,7 +13,8 @@ import { RouterModule, Routes} from '@angular/router';
 
 import { HomeComponent } from './home/home.component';
 import { ResultsComponent } from './results/results.component';
-
+import { MdCardModule } from '@angular/material';
+import { MaterialModule } from '@angular/material';
 
 const appRoutes: Routes = [
 
@@ -39,6 +40,8 @@ const appRoutes: Routes = [
     MdToolbarModule,
     MdButtonModule,
     MdIconModule,
+    MdCardModule,
+    MaterialModule,
   ],
   providers: [SearchService],
   bootstrap: [AppComponent]
