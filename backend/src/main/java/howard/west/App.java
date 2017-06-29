@@ -54,9 +54,9 @@ public class App {
     //GSON is used to map to json.
     Gson gson = new Gson();
 
-    String indexPath = "output/tiny-index";
+    // String indexPath = "output/tiny-index";
     // TODO: Copy your full sized generated index to this path and uncomment this line:
-    // String indexPath = "output/index";
+    String indexPath = "output/index";
 
 
     //the route callback is a lambda function
@@ -65,15 +65,9 @@ public class App {
       return "hello world";
     });
     get(
-
-      "/search", //route
-      "application/json", //return GET
-      (req, res) -> ResultDTO.builder().term(req.queryMap("q").value()),
-
       "/search",
       "application/json",
       (req, res) -> Query.mainQuery(indexPath, req.queryMap("q").value()),
-
       gson::toJson); // <- this is called a method reference
 
   }

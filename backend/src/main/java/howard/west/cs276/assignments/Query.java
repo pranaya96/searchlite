@@ -37,7 +37,29 @@ public class Query {
 		return index.readPosting(fc);
 	}
 
-	public static List<PostingList> mainQuery(String input, String query) {
+	//method to get the intersection of list inside two postingLists
+	public static List<Integer> getIntersection(List<Integer> aList1, List<Integer>aList2){
+		List<Integer> newList = new ArrayList<Integer>();
+		int i = 0; 
+		int j = 0;
+		while(i < aList1.size() && j < aList2.size()){
+			if(aList1.get(i) < aList2.get(j)){
+				i++;
+			}
+			else if(aList2.get(j) < aList1.get(i)){
+				j++ ;
+			}
+			else{
+				newList.add(aList1.get(i));
+				i++ ;
+
+			}
+		}
+		return newList;
+
+	}
+
+	public static List<String> mainQuery(String input, String query) {
 
 	    try {
 
@@ -98,6 +120,28 @@ public class Query {
 			}
 			else postingLists.add(readPosting(indexChannel, termId));
 		    }
+			
+			if (noResults) {
+			System.out.println("no results found");
+		    }
+			//intersecting the posting lists to find the results to the query with one or more tokens
+			List<Integer> polist1 =  new ArrayList<Integer>();
+		    List<Integer> polist2 =  new ArrayList<Integer>();
+	        polist1 = postingLists.get(0).getList();
+	        int i=0;
+	        while (i < postingLists.size()-1){
+	     	 	polist2 = postingLists.get(i+1).getList();
+	     	 	polist1 = getIntersection(polist1, polist2);
+	     	 	i++;
+	     	}
+			//to print in "directory/file" format
+		    List<String> myFinalList = new ArrayList<String>();
+		    for (Integer docs : polist1) {
+			    myFinalList.add(" " + docDict.get(docs));
+			 	// System.out.println(docs);
+			    System.out.println();
+
+			}
 
 		    /*
 		     * TODO: Your code here
@@ -107,7 +151,7 @@ public class Query {
 		     *       line, sorted in lexicographical order.
 		     */
 		indexFile.close();
-		return postingLists;
+		return myFinalList;
 
 		} catch (Exception e) { System.out.println("ERROR " + e); }
 
