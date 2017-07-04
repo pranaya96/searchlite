@@ -1,56 +1,80 @@
-<header>
+<header class="sponge">
   <h1>
-    <a href = "../app/app.component.html"> 
-      <img src="../../Images/title.png" style="width:200px;height:100px;">
+    <a href = "../home.component.html"> 
+      <img src="../../title.png" style="width:200px;height:100px;">
     </a>    
   </h1>
 </header>
 
+<div class="prev">
   
     <button class="md-raised-button md-ink-ripple" type="button" ng-transclude>
  Previous Page
 <div class="md-ripple-container"></div>
 </button>
+</div>
+
+<div class="next">
 
       <button class="md-raised-button md-ink-ripple" type="button" ng-transclude>
 Next Page
 <div class="md-ripple-container"></div>
 </button>
+</div>
+
+<div class="searchbar">
 
  <md-input-container >
           <input mdInput
-                 [(ngModel)]="term"
-                 name="term"
+                 [(ngModel)]="item"
+                 name="item"
                  placeholder="Search again for..."
                  type="text"
                  align="middle"
                  required>
-                 </md-input-container>
+</md-input-container>
 
 
-<button class="md-raised-button md-ink-ripple" type="button" click="getSearch()">
+
+<button class="md-raised-button md-ink-ripple" type="button" (click)="getSearch()">
  Go!
 <div class="md-ripple-container"></div>
 </button>
 
-<ol >
-<md-card class="example-card" >
-  <md-card-header>
-    <div md-card-avatar class="example-header-image"></div>
-    <md-card-title>{{title}}</md-card-title>
-    <md-card-subtitle>{{myHero}}</md-card-subtitle>
-  </md-card-header>
-  <img md-card-image src="assets/img/examples/shiba2.jpg">
-  <md-card-content>
-    <p>
-      
-    </p>
-  </md-card-content>
-  <md-card-actions>
-    <button md-button>LIKE</button>
-    <button md-button>SHARE</button>
-  </md-card-actions>
-</md-card>
-</ol>
+</div>
+
+<section>
+<md-checkbox ng-change= "nightMode"><span class="ng-scope">Enter the Shadows</span></md-checkbox>
+
+  <ol class="cards" ng-class="{'night-mode'}">
+  <md-card *ngFor="let hero of myHero"  >
+    <md-card-header>
+      <div md-card-avatar class="example-header-image"></div>
+      <md-card-title>{{title}}</md-card-title>
+      <md-card-subtitle>{{hero}}</md-card-subtitle>
+    </md-card-header>
+    <md-card-content>
+      <p>
+        {{subTitle}}
+      </p>
+    </md-card-content>
+    <md-card-actions>
+      <button md-button>Go to Link!</button>
+    </md-card-actions>
+  </md-card>
+  </ol>
+<button class="md-raised-button md-ink-ripple" type="button" (click)="Toast()">
+Help
+<div class="md-ripple-container"></div>
+</button>
+</section>
+
+<footer class="sponge">
+  <h1>
+    <a [routerLink]="['../home']">
+      <img src="../Images/title.png" style="width:200px;height:100px;">
+    </a>    
+  </h1>
+</footer>
 
 

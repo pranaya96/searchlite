@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {SearchService} from '../search.service';
-
+import {ToasterModule, ToasterService} from 'angular2-toaster';
 
 @Component({
   selector: 'app-results',
@@ -9,29 +9,40 @@ import {SearchService} from '../search.service';
 })
 export class ResultsComponent{
 	item:string;
-	Results:string[];
-	
-	title:string;
-	myHero:string;
+	Results:string[]= ["Disney movies are trash. Dont @ me", "Nepal is the greatest place", "Sending help now!"];
 
-constructor(private searchService: SearchService) {}
+	title:string = "Results";
+	myHero:string[] = ["Results 1", "Results 2", "Results 3", "Results 4", "Results 5"];
+	subTitle:string;
 
-
-getSearch() {
-    if (this.item == 'Scandal')
-    {
-      this.Results = ['Disney movies are trash. Dont @ me'];
+  private searchService: SearchService;
+  private toasterService: ToasterService;
+    getSearch() {
+      if (this.item == 'Scandal')
+      {
+        this.subTitle = this.Results[0];
+      }
+      if (this.item == 'Nepal')
+      {
+        this.subTitle = this.Results[1];
+      }
+      if (this.item == 'Help')
+      {
+        this.subTitle = this.Results[2];
+      }
     }
-    if (this.item == 'Nepal')
-    {
-      this.Results = ['Nepal is the greatest place'];
+    nightMode(){
+      
     }
-    if (this.item == 'Help')
-    {
-      this.Results = ['Sending help now!'];
-    }
-    
 
-  }
+    Toast(){
+      var toast: Toast = {
+      type: 'info',
+      title: 'Here is a Toast Title',
+      body: 'Here is a Toast Body'
+    };
 
+      this.toasterService.pop(toast);}
 }
+ 
+
