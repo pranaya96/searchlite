@@ -1,53 +1,31 @@
 @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
 
 /* You can add global styles to this file, and also import other style files */
-html {
-  background: url(http://img.ctrlv.in/img/17/06/25/59503e29c9bad.png) no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+.sponge{
+	text-align: center;
+}
+button{
+  align-items: center;
+}
+.prev{
+  text-align: left;
+}
+.next{
+  text-align: right;
+}
+.searchbar{
+	text-align: center;
+}
+.cards{
+	padding: 20px;
+	text-align: center;
+
+}
+.cards.night-mode{
+	background-color: blue;
 }
 
-html, body{
-  min-height:100%;
 
 
-  text-align:center;
 
-}
 
-h1{
-  text-align:center;
-  font-family:'Roboto';
-  
-}
-.jumbotron{
-  padding: 30px;
-  text-align:center;
-}
-#help{
-  text-align:center;
-  font-family:'Roboto';
-}
-form{
-	display:inline;
-}
-nav{
-	text-align:center;
-display:inline-block;
-}
-input
-{
-	border-radius:8px;
-}
-#inside{
-text-align:center;
-display:inline-block;
-}
-#cards{
-  border-radius: 1px;
-}
-footer{
-  text-align:center;
-}
