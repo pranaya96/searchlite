@@ -38,7 +38,7 @@ public class Query {
 	}
 
 	//method to get the intersection of list inside two postingLists
-	public static List<Integer> getIntersection(List<Integer> aList1, List<Integer>aList2){
+	public  List<Integer> getIntersection(List<Integer> aList1, List<Integer>aList2){
 		List<Integer> newList = new ArrayList<Integer>();
 		int i = 0; 
 		int j = 0;

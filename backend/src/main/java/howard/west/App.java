@@ -65,13 +65,13 @@ public class App {
       return "hello world";
     });
     get(
-      "/search",
+      "/results",
       "application/json",
       (req, res) -> Query.mainQuery(indexPath, req.queryMap("q").value()),
       gson::toJson); // <- this is called a method reference
 
 
-   get("/results", (req,res) -> "Hello world");
+  //  get("/results", (req,res) -> "Hello world");
   
 
   }
