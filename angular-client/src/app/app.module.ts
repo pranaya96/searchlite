@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 import {DomSanitizer} from '@angular/platform-browser';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import { RouterModule, Routes} from '@angular/router';
+import {ToasterModule, ToasterService} from 'angular2-toaster';
 import { HomeComponent } from './home/home.component';
 import { ResultsComponent } from './results/results.component';
 import { MdCardModule } from '@angular/material';
@@ -43,7 +44,6 @@ const appRoutes: Routes = [
     MaterialModule,
     FlexLayoutModule,
     MdSnackBarModule,
-
   ],
   providers: [SearchService,],
   bootstrap: [AppComponent]

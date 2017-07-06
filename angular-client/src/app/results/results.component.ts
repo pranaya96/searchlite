@@ -9,13 +9,7 @@ import {ActivatedRoute, Params} from '@angular/router';
   styleUrls: ['results.component.css']
 })
 export class ResultsComponent implements OnInit{
-  item: string;
-	Results:string[]= ["Disney movies are trash. Dont @ me", "Nepal is the greatest place", "Sending help now!"];
-
-	title:string = "Results";
-	myHero:string[] = ["Results 1", "Results 2", "Results 3", "Results 4", "Results 5"];
-	subTitle:string;
-
+	item:string;
   constructor(
     private searchService: SearchService, 
     private snackBar: MdSnackBar,
@@ -38,8 +32,30 @@ export class ResultsComponent implements OnInit{
   }
 }
  
-@Component({
-  selector: 'my-snack-bar',
-  template: '<div>Hello World</div>',
-})
-export class MySnackBar {}
+// @Component({
+//   selector: 'my-snack-bar',
+//   template: '<div>Hello World</div>',
+// })
+// export class MySnackBar {}
+//   private searchService: SearchService;
+//   private toasterService: ToasterService;
+//     getSearch() {
+//       if (this.item == 'Scandal')
+//       {
+//         this.subTitle = this.Results[0];
+//       }
+//       if (this.item == 'Nepal')
+//       {
+//         this.subTitle = this.Results[1];
+//       }
+//       if (this.item == 'Help')
+//       {
+//         this.subTitle = this.Results[2];
+//       }
+//     }
+//     nightMode(){
+      
+//     }
+// }
+ 
+
