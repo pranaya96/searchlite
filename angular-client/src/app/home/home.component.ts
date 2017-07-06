@@ -10,24 +10,4 @@ export class HomeComponent {
   term: string;
   results: string[];
   title = 'Got qWest?';
-
-  constructor(private searchService: SearchService) {}
-
-  search() {
-    if (this.term === 'dog')
-    {
-      this.results = ['file1.pdf'];
-    }
-    if (this.term == 'Nepal')
-    {
-      this.results = ['Nepal is a great place'];
-    }
-    if (this.term == 'America')
-    {
-      this.results = ['Some link to America'];
-    }
-    
-
-  }
-
 }

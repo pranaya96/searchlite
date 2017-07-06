@@ -1,48 +1,61 @@
 import { Component, OnInit } from '@angular/core';
 import {SearchService} from '../search.service';
-import {ToasterModule, ToasterService} from 'angular2-toaster';
+import {MdSnackBar} from '@angular/material';
+import {ActivatedRoute, Params} from '@angular/router';
 
 @Component({
   selector: 'app-results',
   templateUrl: 'results.component.html',
   styleUrls: ['results.component.css']
 })
-export class ResultsComponent{
+export class ResultsComponent implements OnInit{
 	item:string;
-	Results:string[]= ["Disney movies are trash. Dont @ me", "Nepal is the greatest place", "Sending help now!"];
+  constructor(
+    private searchService: SearchService, 
+    private snackBar: MdSnackBar,
+    private activatedRoute: ActivatedRoute) {}
+    
+  ngOnInit() {
+    let term = '';
+    this.activatedRoute.params.subscribe((params: Params) => {
+        term = params['term'];
+      });
+    this.searchService.search(term).subscribe((data: string[])=>{
+      this.myHero = data;
+    });  
+  }
 
-	title:string = "Results";
-	myHero:string[] = ["Results 1", "Results 2", "Results 3", "Results 4", "Results 5"];
-	subTitle:string;
-
-  private searchService: SearchService;
-  private toasterService: ToasterService;
-    getSearch() {
-      if (this.item == 'Scandal')
-      {
-        this.subTitle = this.Results[0];
-      }
-      if (this.item == 'Nepal')
-      {
-        this.subTitle = this.Results[1];
-      }
-      if (this.item == 'Help')
-      {
-        this.subTitle = this.Results[2];
-      }
-    }
-    nightMode(){
-      
-    }
-
-    Toast(){
-      var toast: Toast = {
-      type: 'info',
-      title: 'Here is a Toast Title',
-      body: 'Here is a Toast Body'
-    };
-
-      this.toasterService.pop(toast);}
+    openSnackBar() {
+    this.snackBar.openFromComponent(MySnackBar, {
+      duration: 500,
+    });
+  }
 }
+ 
+// @Component({
+//   selector: 'my-snack-bar',
+//   template: '<div>Hello World</div>',
+// })
+// export class MySnackBar {}
+//   private searchService: SearchService;
+//   private toasterService: ToasterService;
+//     getSearch() {
+//       if (this.item == 'Scandal')
+//       {
+//         this.subTitle = this.Results[0];
+//       }
+//       if (this.item == 'Nepal')
+//       {
+//         this.subTitle = this.Results[1];
+//       }
+//       if (this.item == 'Help')
+//       {
+//         this.subTitle = this.Results[2];
+//       }
+//     }
+//     nightMode(){
+      
+//     }
+// }
  
 

@@ -19,7 +19,7 @@
                  align="middle"
                  required>
                  <button  md-raised-button (click)="search()">
-                    <a [routerLink]="['../results']">Search</a>
+                    <a [routerLink]="['/results', term]">Search</a>
                  </button>
         </md-input-container>
     </div>
