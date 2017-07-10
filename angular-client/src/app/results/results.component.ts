@@ -15,7 +15,7 @@ export class ResultsComponent implements OnInit{
   item:string;
   title:string = "Results";
   myHero:string[];
-  p:number = 1;
+  color:number = 1;
   numPerPage:number =10;
   cardColor:string = "white";
   constructor(
@@ -38,18 +38,17 @@ export class ResultsComponent implements OnInit{
   }
 
   nightMode(){
-    if(this.p == 1){
+    if(this.color == 1){
       this.cardColor = "blue";
-      this.p=0;
+      this.color=0;
     }
     else{
       this.cardColor = "white";
-      this.p=1;
+      this.color=1;
 
     }
       
      }
-
 
   moreResults(){
     this.numPerPage = this.numPerPage + 10;

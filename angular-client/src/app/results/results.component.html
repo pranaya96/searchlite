@@ -16,23 +16,19 @@ Results per Page : {{numPerPage}}
 </p>
 <md-checkbox ng-model="isChecked" [checked]="checked" (change)= "nightMode()"><span class="ng-scope">Enter the Shadows</span></md-checkbox>
 
-<a md-raised-button align="center" (click)="search()" [routerLink]="['']">
+<a md-raised-button align="center" [routerLink]="['']">
            Search Again!</a>
 
 <pagination-controls align="center" (pageChange)="p = $event"></pagination-controls>
+<md-card>{{title}}</md-card>
+
 
   <ol class="cards">
   <md-card  class={{cardColor}} *ngFor="let hero of myHero | paginate: { itemsPerPage: numPerPage, currentPage: p }"  >
     <md-card-header>
       <div md-card-avatar class="example-header-image"></div>
-      <md-card-title >{{title}}</md-card-title>
-      <md-card-subtitle >{{hero}}</md-card-subtitle>
+        <md-card-subtitle class="help">{{hero}}</md-card-subtitle>
     </md-card-header>
-    <md-card-content>
-      <p>
-        {{subTitle}}
-      </p>
-    </md-card-content>
   </md-card>
   </ol>
 

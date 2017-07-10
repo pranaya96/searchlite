@@ -26,6 +26,9 @@ button{
 	text-align: center;
 	align-items: center;
 }
+.help{
+	text-align: center;
+}
 .inRes{
 	text-align: right;
 }
