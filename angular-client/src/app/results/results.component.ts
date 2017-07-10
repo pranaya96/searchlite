@@ -8,8 +8,16 @@ import {ActivatedRoute, Params} from '@angular/router';
   templateUrl: 'results.component.html',
   styleUrls: ['results.component.css']
 })
+
+
 export class ResultsComponent implements OnInit{
-	item:string;
+
+  item:string;
+  title:string = "Results";
+  myHero:string[];
+  p:number = 1;
+  numPerPage:number =10;
+  cardColor:string = "white";
   constructor(
     private searchService: SearchService, 
     private snackBar: MdSnackBar,
@@ -25,12 +33,26 @@ export class ResultsComponent implements OnInit{
     });  
   }
 
-    openSnackBar() {
-    this.snackBar.openFromComponent(MySnackBar, {
-      duration: 500,
-    });
+  nightMode(){
+    if(this.p == 1){
+      this.cardColor = "blue";
+      this.p=0;
+    }
+    else{
+      this.cardColor = "white";
+      this.p=1;
+
+    }
+      
+     }
+
+
+  moreResults(){
+    this.numPerPage = this.numPerPage + 10;
+    
   }
-}
+  }
+
  
 // @Component({
 //   selector: 'my-snack-bar',

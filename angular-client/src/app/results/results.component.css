@@ -5,14 +5,9 @@
 	text-align: center;
 }
 button{
-  align-items: center;
+  align-items: right;
 }
-.prev{
-  text-align: left;
-}
-.next{
-  text-align: right;
-}
+
 .searchbar{
 	text-align: center;
 }
@@ -21,8 +16,22 @@ button{
 	text-align: center;
 
 }
-.cards.night-mode{
-	background-color: blue;
+.white{
+	text-align: center;
+	align-items: center;
+}
+.blue{
+	background-color: #ADD8E6;
+	color:white;
+	text-align: center;
+	align-items: center;
+}
+.inRes{
+	text-align: right;
+}
+.searchbtn{
+	text-align: center;
+	align-items: center;
 }
 
 

@@ -1,6 +1,6 @@
 <form>
     <md-toolbar color="accent">
-        <span><img src="http://img.ctrlv.in/img/17/06/25/5950401a82ce9.png"></span>
+        <span><img src="http://img.ctrlv.in/img/17/07/05/595d2bfbe0fb9.png" width = 200px height = 100px></span>
         <span class="example-spacer"></span>
         <md-toolbar-row>
             <span>Home</span>
@@ -18,9 +18,9 @@
                  type="text"
                  align="middle"
                  required>
-                 <button  md-raised-button (click)="search()">
-                    <a [routerLink]="['/results', term]">Search</a>
-                 </button>
+                 
+                 <a md-raised-button (click)="search()" [routerLink]="['/results', term]">
+           Search</a>
         </md-input-container>
     </div>
 </form>
