@@ -29,6 +29,10 @@ export class ResultsComponent implements OnInit{
         term = params['term'];
       });
     this.searchService.search(term).subscribe((data: string[])=>{
+      for(var _i =0; _i < data.length; ++_i){
+        var parsedStr = data[_i].slice(3);
+        data[_i] = parsedStr;
+      }
       this.myHero = data;
     });  
   }

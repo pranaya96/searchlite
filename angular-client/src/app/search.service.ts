@@ -9,7 +9,7 @@ export class SearchService {
   // docker dns allows you to access the service through it's service name
   search(term: string): Observable<{}> {
     return this.http
-      .get('http://backend.howard.test:8080/search?q=' + term)
+      .get('http://backend.howard.test:8080/results?q=' + term)
       .map(response => response.json());
   }
 }
