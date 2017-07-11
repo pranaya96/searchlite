@@ -73,7 +73,7 @@ export class ResultsComponent implements OnInit{
 
     }
       
-     }
+  }
 
   moreResults(){
     this.numPerPage = this.numPerPage + 10;
