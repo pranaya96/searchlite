@@ -1,12 +1,6 @@
-#GOT qWest
-#### Team
+## Instructions for Markdown
 
-  * Pranaya Adhikari
-  * Victoria Velazquez
-  * Ashley Mckoy
-  * Kyle Frederick
-  
-
+https://en.wikipedia.org/wiki/Markdown
 
 ## Environment Setup
 
@@ -32,4 +26,9 @@ Add `127.0.0.1 frontend.howard.test` and `127.0.0.1 backend.howard.test` to `/et
 
 Run `docker-compose up` to run the servers.
 
+#### Team
 
+  * Pranaya Adhikari
+  * Victoria Velazquez
+  * Ashley Mckoy
+  * Kyle Frederick
