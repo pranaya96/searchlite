@@ -27,7 +27,8 @@ Results per Page : {{numPerPage}}
   <md-card  class={{cardColor}} *ngFor="let hero of myHero | paginate: { itemsPerPage: numPerPage, currentPage: p }"  >
     <md-card-header>
       <div md-card-avatar class="example-header-image"></div>
-        <md-card-subtitle class="help">{{hero}}</md-card-subtitle>
+        <md-card-subtitle class="help">
+          <a href="http://{{hero}}"> {{hero}} </a></md-card-subtitle>
     </md-card-header>
   </md-card>
   </ol>

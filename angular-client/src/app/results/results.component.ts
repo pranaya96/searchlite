@@ -30,8 +30,11 @@ export class ResultsComponent implements OnInit{
       });
     this.searchService.search(term).subscribe((data: string[])=>{
       for(var _i =0; _i < data.length; ++_i){
+        // console.log(data[_i]);
         var parsedStr = data[_i].slice(3);
-        data[_i] = parsedStr;
+        var newString = parsedStr.replace(/_/gi, "/");
+        data[_i] = newString;
+        
       }
       this.myHero = data;
     });  
@@ -54,33 +57,8 @@ export class ResultsComponent implements OnInit{
     this.numPerPage = this.numPerPage + 10;
     
   }
-  }
+}
 
  
-// @Component({
-//   selector: 'my-snack-bar',
-//   template: '<div>Hello World</div>',
-// })
-// export class MySnackBar {}
-//   private searchService: SearchService;
-//   private toasterService: ToasterService;
-//     getSearch() {
-//       if (this.item == 'Scandal')
-//       {
-//         this.subTitle = this.Results[0];
-//       }
-//       if (this.item == 'Nepal')
-//       {
-//         this.subTitle = this.Results[1];
-//       }
-//       if (this.item == 'Help')
-//       {
-//         this.subTitle = this.Results[2];
-//       }
-//     }
-//     nightMode(){
-      
-//     }
-// }
- 
+
 
