@@ -1,16 +1,9 @@
 @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
 
 .center {
-    margin: auto;
-    height: 450px;
-    line-height: normal;
-    width: 300px;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding: 10px;
+    display: block;
+    padding: 100px 0;
+    margin: 0 auto;
 }
 .middle {
   position: absolute;
@@ -21,7 +14,6 @@
      margin-top: -11px;
      margin-left: -75px;
      width: 180%;
-     height: 22px;
 
 }
 .top {
@@ -39,20 +31,31 @@
 }
 /*Search bar*/
 input[type=text] {
-    width: 150%;
-    padding: 25px 30px;
-    background: white;
-    color:black;
-    box-shadow: 10px 10px 10px 1px rgba(0, 0, 0, 0.5);
-    -webkit-transition: width 0.4s ease-in-out;
-    transition: width 0.4s ease-in-out;
+    
 }
 
 /* When the input field gets focus, change its width to 100% */
 input[type=text]:focus {
-    width: 200%;
+    width: 100%;
 }
 
-h2{
-  color: white;
+.inputsize{
+  width: 50%;
+}
+.example-card{
+  width: 700px;
+  margin: auto;
+  bottom: -110px;
+  padding: 80px;
+}
+.example-header-image{
+  background-image: url();
+  background-size: cover;
+}
+body {
+  background: url(http://img.ctrlv.in/img/17/07/06/595e9e26a97b3.png) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }

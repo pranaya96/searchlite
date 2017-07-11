@@ -13,11 +13,11 @@ import {ActivatedRoute, Params} from '@angular/router';
 export class ResultsComponent implements OnInit{
 
   item:string;
-  title:string = "Results";
-  myHero:string[];
+  Results:string[];
   color:number = 1;
   numPerPage:number =10;
   cardColor:string = "white";
+
   constructor(
     private searchService: SearchService, 
     private snackBar: MdSnackBar,
@@ -29,13 +29,25 @@ export class ResultsComponent implements OnInit{
         term = params['term'];
       });
     this.searchService.search(term).subscribe((data: string[])=>{
+      if(term =="undefined"){
+        //this.Results[] = "No results found";
+        this.Results.length = 1;
+
+      }else{
       for(var _i =0; _i < data.length; ++_i){
         var parsedStr = data[_i].slice(3);
         data[_i] = parsedStr;
       }
-      this.myHero = data;
+      this.Results = data;
+    }
+
     });  
   }
+  Scroll(){
+
+
+  }
+
 
   nightMode(){
     if(this.color == 1){
@@ -52,6 +64,18 @@ export class ResultsComponent implements OnInit{
 
   moreResults(){
     this.numPerPage = this.numPerPage + 10;
+    
+  }
+  getSearch(){
+    window.location.reload(true);
+  }
+  lessResults(){
+    if(this.numPerPage > 10){
+      this.numPerPage = this.numPerPage - 10;
+    }
+    else{
+    this.numPerPage = 10
+  }
     
   }
   }

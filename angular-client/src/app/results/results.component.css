@@ -1,20 +1,9 @@
 @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
 
 /* You can add global styles to this file, and also import other style files */
-.sponge{
+.Heading{
 	text-align: center;
-}
-button{
-  align-items: right;
-}
-
-.searchbar{
-	text-align: center;
-}
-.cards{
-	padding: 20px;
-	text-align: center;
-
+  align-items: center;
 }
 .white{
 	text-align: center;
@@ -23,20 +12,51 @@ button{
 .blue{
 	background-color: #ADD8E6;
 	color:white;
-	text-align: center;
-	align-items: center;
 }
 .help{
 	text-align: center;
 }
-.inRes{
+.Increase{
+	text-align: left;
+}
+.Decrease{
+	text-align: right; 
+}
+.nightMode{
 	text-align: right;
 }
-.searchbtn{
-	text-align: center;
-	align-items: center;
+
+
+.example-container {
+  width: 500px;
+  height: 300px;
+  border: 1px solid rgba(0, 0, 0, 0.5);
 }
 
+.example-sidenav-fab-container {
+	background: url(http://img.ctrlv.in/img/17/07/06/595e9e26a97b3.png) no-repeat center center fixed;
+	-webkit-background-size: cover;
+ -moz-background-size: cover;
+ -o-background-size: cover;
+ background-size: cover;
+  width: 400px;
+}
+.example-card {
+  width: 200px;
+	/*display: block;*/
+  margin: auto;
+	bottom: -110px;
+	padding: 80px;
+}
+.color{
+	background: url(http://img.ctrlv.in/img/17/07/06/595e9e26a97b3.png) no-repeat;
+	background-size: 450px;
+
+
+}
+.example-scrolling-content {
+  overflow: auto;
+}
 
 
 

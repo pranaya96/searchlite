@@ -16,6 +16,7 @@ import { ResultsComponent } from './results/results.component';
 import { MdCardModule } from '@angular/material';
 import { MaterialModule } from '@angular/material';
 import {NgxPaginationModule} from 'ngx-pagination';
+import {MdSidenavModule} from '@angular/material';
 
 const appRoutes: Routes = [
 
@@ -46,6 +47,7 @@ const appRoutes: Routes = [
     FlexLayoutModule,
     MdSnackBarModule,
     NgxPaginationModule,
+    MdSidenavModule,
   ],
   providers: [SearchService,],
   bootstrap: [AppComponent]

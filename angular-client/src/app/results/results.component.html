@@ -1,49 +1,89 @@
-<header class="sponge">
-  <h1>
-    <a href = "../home.component.html"> 
-      <img src="http://img.ctrlv.in/img/17/07/05/595d2bfbe0fb9.png" style="width:200px;height:100px;">
-    </a>    
-  </h1>
-</header>
+<md-sidenav-container> <!-- If the user wishes to search again, then they would be brough to the sidenav -->
+  <md-sidenav #sidenav mode="side" opened="false" class="color"> <!--When the results page is first shown, we wanted the sidenav to be closed until the user opened it-->
+
+    <md-card class="example-card">
+      <md-card-header>
+        <div class="center">
+        <md-card-title> <img src="http://img.ctrlv.in/img/17/07/06/595e7ad3c17d3.png" style="width:200px;"> </md-card-title>
+      </div>
+       </md-card-header>
+
+      <md-card-content>
+        <div fxLayout="row" fxLayoutAlign="space-between center">
+
+             <md-input-container >
+                      <input mdInput
+                             [(ngModel)]="item"
+                             name="item"
+                             placeholder="Search again for..."
+                             type="text"
+                             align="middle"
+                             required>
+            </md-input-container>
+
+
+        <md-card-actions>
+          <button md-mini-fab class="example-fab" (click)="sidenav.toggle()" (click)="getSearch()" [routerLink]="['/results', item]" >
+            Go!
+          </button>
+
+        </md-card-actions>
+        </div>
+      </md-card-content>
+    </md-card>
+  </md-sidenav>
+
+<button md-mini-fab class="example-fab" (click)="sidenav.toggle()">
+          <md-icon>search</md-icon>
+</button>
+<div class="Heading">
+
+  <header fxFlexAlign="baseline">
+    <h1>
+        <img src="http://img.ctrlv.in/img/17/07/11/596420474972d.png" style="width:200px;">
+    </h1>
+  </header>
 
 <section>
 
-<button id="inRes" class="inRes" type="button" (click)="moreResults()">
-Increase Results Per Page by 10
-</button>
-<p>
+<div class="Increase"> <!--Button to increase the amount of search results per page-->
+  <button type="button" (click)="moreResults()">Increase Results Per Page by 10</button>
+  </div>
+
+
+<p align="left"> <!--Show user how many search results there are on the page at the moment-->
 Results per Page : {{numPerPage}}
 </p>
-<md-checkbox ng-model="isChecked" [checked]="checked" (change)= "nightMode()"><span class="ng-scope">Enter the Shadows</span></md-checkbox>
 
-<a md-raised-button align="center" [routerLink]="['']">
-           Search Again!</a>
+<div class="Decrease"><!--Button to decrease the amount of search results per page-->
+  <button type="button" (click)="lessResults()"> Decrease Results Per Page by 10</button>
+  </div>
 
-<pagination-controls align="center" (pageChange)="p = $event"></pagination-controls>
-<md-card>{{title}}</md-card>
+<div class="nightMode"><!--Toggle if the user would like the cards to be darker for night time reading-->
+  <md-checkbox ng-model="isChecked" [checked]="checked" (change)= "nightMode()"><span class="ng-scope">Enter the Shadows</span></md-checkbox>
+  </div>
 
 
-  <ol class="cards">
-  <md-card  class={{cardColor}} *ngFor="let hero of myHero | paginate: { itemsPerPage: numPerPage, currentPage: p }"  >
-    <md-card-header>
-      <div md-card-avatar class="example-header-image"></div>
-        <md-card-subtitle class="help">{{hero}}</md-card-subtitle>
-    </md-card-header>
+
+<div>
+  <ol fxLayout="column" fxLayoutAlign="space-around stretch" ><!--Have the cards in an ordered list fashion-->
+  <md-card class={{cardColor}} *ngFor="let result of Results | paginate: { itemsPerPage: numPerPage, currentPage: p }"><!--Create cards for each search result and store it in there-->
+
+  <md-card-content>
+    <div fxLayout="row" fxLayoutAlign="center center">
+      <div><a href="http://{{result}}">{{result}}</a> </div><!--Make the links clickable to the user and go to actual pages-->
+    </div>
+  </md-card-content>
   </md-card>
   </ol>
+</div>
 
-<button class="md-raised-button md-ink-ripple" type="button" (click)="Toast()">
-Help
-<div class="md-ripple-container"></div>
-</button>
+<pagination-controls align="center" (pageChange)="p = $event"></pagination-controls> <!--Controls which page the user would like to be on-->
+
+
 </section>
 
-<footer class="sponge">
-  <h1>
-    <a [routerLink]="['../home']">
-      <img src="http://img.ctrlv.in/img/17/07/05/595d2bfbe0fb9.png" style="width:200px;height:100px;">
-    </a>    
-  </h1>
-</footer>
+</div>
+</md-sidenav-container>
 
 
