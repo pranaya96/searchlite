@@ -134,6 +134,7 @@ public class Query {
 	     	 	polist1 = getIntersection(polist1, polist2);
 	     	 	i++;
 	     	}
+			
 			//to print in "directory/file" format
 		    List<String> myFinalList = new ArrayList<String>();
 		    for (Integer docs : polist1) {
@@ -143,13 +144,7 @@ public class Query {
 
 			}
 
-		    /*
-		     * TODO: Your code here
-		     *       Perform query processing with the inverted index.
-		     *       Make sure to print to stdout the list of documents
-		     *       containing the query terms, one document file on each
-		     *       line, sorted in lexicographical order.
-		     */
+		  
 		indexFile.close();
 		return myFinalList;
 

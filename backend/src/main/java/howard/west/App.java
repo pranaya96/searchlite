@@ -53,9 +53,8 @@ public class App {
 
     //GSON is used to map to json.
     Gson gson = new Gson();
-
-    // String indexPath = "output/tiny-index";
-    // TODO: Copy your full sized generated index to this path and uncomment this line:
+   
+   //path of the generated index 
     String indexPath = "output/index";
 
 
@@ -68,10 +67,11 @@ public class App {
       "/results",
       "application/json",
       (req, res) -> Query.mainQuery(indexPath, req.queryMap("q").value()),
-      gson::toJson); // <- this is called a method reference
+      gson::toJson);
+       // <- this is called a method reference
 
 
-  //  get("/results", (req,res) -> "Hello world");
+ 
   
 
   }

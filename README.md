@@ -1,3 +1,7 @@
+## Instructions for Markdown
+
+https://en.wikipedia.org/wiki/Markdown
+
 ## Environment Setup
 
 ### Docker
@@ -22,24 +26,9 @@ Add `127.0.0.1 frontend.howard.test` and `127.0.0.1 backend.howard.test` to `/et
 
 Run `docker-compose up` to run the servers.
 
-<<<<<<< HEAD
-Pranaya Adhikari
+#### Team
 
-Trying to see if there is a merge conflict
-=======
-
-Victoria Velazquez was here
->>>>>>> adffdee7150a15281c7b421d16bdb8e7516e45c8
-
-Victoria Velazquez
-
-Ashley Mckoy
-
-Pranaya Adhikari
-
-Kyle Frederick
-
-Kevin Lei
-
-KyleFrederick2
-
+  * Pranaya Adhikari
+  * Victoria Velazquez
+  * Ashley Mckoy
+  * Kyle Frederick

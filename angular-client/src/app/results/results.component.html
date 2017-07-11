@@ -1,5 +1,5 @@
 <md-sidenav-container> <!-- If the user wishes to search again, then they would be brough to the sidenav -->
-  <md-sidenav #sidenav mode="side" opened="false" class="color"> <!--When the results page is first shown, we wanted the sidenav to be closed until the user opened it-->
+  <md-sidenav mode="side" opened="false" class="color"> <!--When the results page is first shown, we wanted the sidenav to be closed until the user opened it-->
 
     <md-card class="example-card">
       <md-card-header>
@@ -65,6 +65,7 @@ Results per Page : {{numPerPage}}
 
 
 
+
 <div>
   <ol fxLayout="column" fxLayoutAlign="space-around stretch" ><!--Have the cards in an ordered list fashion-->
   <md-card class={{cardColor}} *ngFor="let result of Results | paginate: { itemsPerPage: numPerPage, currentPage: p }"><!--Create cards for each search result and store it in there-->
@@ -74,6 +75,19 @@ Results per Page : {{numPerPage}}
       <div><a href="http://{{result}}">{{result}}</a> </div><!--Make the links clickable to the user and go to actual pages-->
     </div>
   </md-card-content>
+
+<pagination-controls align="center" (pageChange)="p = $event"></pagination-controls>
+<md-card>{{callTime}}</md-card>
+
+
+  <ol class="cards">
+  <md-card  class={{cardColor}} *ngFor="let hero of myHero | paginate: { itemsPerPage: numPerPage, currentPage: p }"  >
+    <md-card-header>
+      <div md-card-avatar class="example-header-image"></div>
+        <md-card-subtitle class="help">
+          <a href="http://{{hero}}"> {{hero}} </a></md-card-subtitle>
+    </md-card-header>
+
   </md-card>
   </ol>
 </div>

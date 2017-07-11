@@ -22,13 +22,16 @@ export class ResultsComponent implements OnInit{
     private searchService: SearchService, 
     private snackBar: MdSnackBar,
     private activatedRoute: ActivatedRoute) {}
-    
+   
   ngOnInit() {
+    var start = performance.now(); //to check the time of function call
     let term = '';
     this.activatedRoute.params.subscribe((params: Params) => {
         term = params['term'];
+        term = term.toLowerCase(); //for case insensitive search
       });
     this.searchService.search(term).subscribe((data: string[])=>{
+
       if(term =="undefined"){
         //this.Results[] = "No results found";
         this.Results.length = 1;
@@ -40,6 +43,34 @@ export class ResultsComponent implements OnInit{
       }
       this.Results = data;
     }
+
+      this.callTime = '';
+      //case when there is empty search
+      if (term=="undefined"){
+        this.callTime = "No results found";
+      }
+      else{
+        for(var _i =0; _i < data.length; ++_i){
+          var parsedStr = data[_i].slice(3); //parse the filename 
+          var newString = parsedStr.replace(/_/gi, "/"); //get url from the filename
+          data[_i] = newString;
+          
+        }
+    
+        this.myHero = data; 
+        var mylen = this.myHero.length;
+        
+        //case when there is no result for the query terms
+        if (mylen == 0){
+          this.callTime = "No results found";
+        }
+        
+        else{
+          var end = performance.now();
+          this.callTime  = "Call took " + (end - start) + " milliseconds to get "+ mylen+" results";
+          
+        }
+      }
 
     });  
   }
@@ -66,6 +97,7 @@ export class ResultsComponent implements OnInit{
     this.numPerPage = this.numPerPage + 10;
     
   }
+
   getSearch(){
     window.location.reload(true);
   }
@@ -80,31 +112,9 @@ export class ResultsComponent implements OnInit{
   }
   }
 
+}
+
+
  
-// @Component({
-//   selector: 'my-snack-bar',
-//   template: '<div>Hello World</div>',
-// })
-// export class MySnackBar {}
-//   private searchService: SearchService;
-//   private toasterService: ToasterService;
-//     getSearch() {
-//       if (this.item == 'Scandal')
-//       {
-//         this.subTitle = this.Results[0];
-//       }
-//       if (this.item == 'Nepal')
-//       {
-//         this.subTitle = this.Results[1];
-//       }
-//       if (this.item == 'Help')
-//       {
-//         this.subTitle = this.Results[2];
-//       }
-//     }
-//     nightMode(){
-      
-//     }
-// }
- 
+
 
