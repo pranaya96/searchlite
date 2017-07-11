@@ -28,12 +28,7 @@ Run `docker-compose up` to run the servers.
 
 #### Team
 
-Pranaya Adhikari
-
-Victoria Velazquez
-
-Ashley Mckoy
-
-Pranaya Adhikari
-
-Kyle Frederick
+  * Pranaya Adhikari
+  * Victoria Velazquez
+  * Ashley Mckoy
+  * Kyle Frederick
