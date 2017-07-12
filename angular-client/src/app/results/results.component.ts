@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {SearchService} from '../search.service';
 import {MdSnackBar} from '@angular/material';
 import {ActivatedRoute, Params} from '@angular/router';
+import {MdSidenavModule} from '@angular/material';
 
 @Component({
   selector: 'app-results',
@@ -17,7 +18,7 @@ export class ResultsComponent implements OnInit{
   color:number = 1;
   numPerPage:number =10;
   cardColor:string = "white";
-
+  callTime:string;
   constructor(
     private searchService: SearchService, 
     private snackBar: MdSnackBar,
@@ -32,18 +33,6 @@ export class ResultsComponent implements OnInit{
       });
     this.searchService.search(term).subscribe((data: string[])=>{
 
-      if(term =="undefined"){
-        //this.Results[] = "No results found";
-        this.Results.length = 1;
-
-      }else{
-      for(var _i =0; _i < data.length; ++_i){
-        var parsedStr = data[_i].slice(3);
-        data[_i] = parsedStr;
-      }
-      this.Results = data;
-    }
-
       this.callTime = '';
       //case when there is empty search
       if (term=="undefined"){
@@ -57,8 +46,8 @@ export class ResultsComponent implements OnInit{
           
         }
     
-        this.myHero = data; 
-        var mylen = this.myHero.length;
+        this.Results = data; 
+        var mylen = this.Results.length;
         
         //case when there is no result for the query terms
         if (mylen == 0){
@@ -67,19 +56,13 @@ export class ResultsComponent implements OnInit{
         
         else{
           var end = performance.now();
-          this.callTime  = "Call took " + (end - start) + " milliseconds to get "+ mylen+" results";
+          this.callTime  = "It took " + (end - start) + " milliseconds to get "+ mylen+" results!";
           
         }
       }
 
     });  
   }
-  Scroll(){
-
-
-  }
-
-
   nightMode(){
     if(this.color == 1){
       this.cardColor = "blue";
@@ -112,7 +95,6 @@ export class ResultsComponent implements OnInit{
   }
   }
 
-}
 
 
  

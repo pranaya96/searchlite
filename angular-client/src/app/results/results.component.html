@@ -1,13 +1,15 @@
 <md-sidenav-container> <!-- If the user wishes to search again, then they would be brough to the sidenav -->
-  <md-sidenav mode="side" opened="false" class="color"> <!--When the results page is first shown, we wanted the sidenav to be closed until the user opened it-->
+  <md-sidenav #sidenav mode="side" opened="false" class="color"> <!--When the results page is first shown, we wanted the sidenav to be closed until the user opened it-->
 
     <md-card class="example-card">
       <md-card-header>
         <div class="center">
-        <md-card-title> <img src="http://img.ctrlv.in/img/17/07/06/595e7ad3c17d3.png" style="width:200px;"> </md-card-title>
-      </div>
-       </md-card-header>
-
+          <md-card-title> <img src="http://img.ctrlv.in/img/17/07/06/595e7ad3c17d3.png" style="width:200px;"> </md-card-title>
+        </div>
+      </md-card-header>
+    </md-card>
+       
+<md-card>
       <md-card-content>
         <div fxLayout="row" fxLayoutAlign="space-between center">
 
@@ -26,7 +28,6 @@
           <button md-mini-fab class="example-fab" (click)="sidenav.toggle()" (click)="getSearch()" [routerLink]="['/results', item]" >
             Go!
           </button>
-
         </md-card-actions>
         </div>
       </md-card-content>
@@ -36,16 +37,16 @@
 <button md-mini-fab class="example-fab" (click)="sidenav.toggle()">
           <md-icon>search</md-icon>
 </button>
-<div class="Heading">
 
+<div class="Heading">
   <header fxFlexAlign="baseline">
     <h1>
         <img src="http://img.ctrlv.in/img/17/07/11/596420474972d.png" style="width:200px;">
     </h1>
   </header>
+</div>
 
 <section>
-
 <div class="Increase"> <!--Button to increase the amount of search results per page-->
   <button type="button" (click)="moreResults()">Increase Results Per Page by 10</button>
   </div>
@@ -63,41 +64,26 @@ Results per Page : {{numPerPage}}
   <md-checkbox ng-model="isChecked" [checked]="checked" (change)= "nightMode()"><span class="ng-scope">Enter the Shadows</span></md-checkbox>
   </div>
 
+<div class="callTime">
+<md-card>{{callTime}}</md-card>
+</div>
 
-
-
-<div>
   <ol fxLayout="column" fxLayoutAlign="space-around stretch" ><!--Have the cards in an ordered list fashion-->
   <md-card class={{cardColor}} *ngFor="let result of Results | paginate: { itemsPerPage: numPerPage, currentPage: p }"><!--Create cards for each search result and store it in there-->
 
   <md-card-content>
     <div fxLayout="row" fxLayoutAlign="center center">
-      <div><a href="http://{{result}}">{{result}}</a> </div><!--Make the links clickable to the user and go to actual pages-->
+      <div><a href="http://{{result}}">{{result}}</a></div><!--Make the links clickable to the user and go to actual pages-->
     </div>
   </md-card-content>
-
-<pagination-controls align="center" (pageChange)="p = $event"></pagination-controls>
-<md-card>{{callTime}}</md-card>
-
-
-  <ol class="cards">
-  <md-card  class={{cardColor}} *ngFor="let hero of myHero | paginate: { itemsPerPage: numPerPage, currentPage: p }"  >
-    <md-card-header>
-      <div md-card-avatar class="example-header-image"></div>
-        <md-card-subtitle class="help">
-          <a href="http://{{hero}}"> {{hero}} </a></md-card-subtitle>
-    </md-card-header>
-
   </md-card>
   </ol>
-</div>
+
 
 <pagination-controls align="center" (pageChange)="p = $event"></pagination-controls> <!--Controls which page the user would like to be on-->
 
 
 </section>
-
-</div>
 </md-sidenav-container>
 
 

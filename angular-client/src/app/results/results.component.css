@@ -25,7 +25,9 @@
 .nightMode{
 	text-align: right;
 }
-
+.callTime{
+	text-align: center;
+}
 
 .example-container {
   width: 500px;
