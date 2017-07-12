@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {SearchService} from '../search.service';
 import {MdSnackBar} from '@angular/material';
 import {ActivatedRoute, Params} from '@angular/router';
+import {MdSidenavModule} from '@angular/material';
 
 @Component({
   selector: 'app-results',
@@ -13,8 +14,7 @@ import {ActivatedRoute, Params} from '@angular/router';
 export class ResultsComponent implements OnInit{
 
   item:string;
-  title:string = "Results";
-  myHero:string[];
+  Results:string[];
   color:number = 1;
   numPerPage:number =10;
   cardColor:string = "white";
@@ -32,17 +32,19 @@ export class ResultsComponent implements OnInit{
         term = term.toLowerCase(); //for case insensitive search
       });
     this.searchService.search(term).subscribe((data: string[])=>{
+
       this.callTime = '';
       //case when there is empty search
       if (term=="undefined"){
         this.callTime = "Empty Search";
       }
       else{
-        //case when there is no result for the query terms
+        //case when the data array is null
         if (data ==null){
           this.callTime = "No results found";
         }
         else{
+          //case when the data array has length 0
           if(data.length == 0){
             this.callTime = "No results found";
           }
@@ -52,16 +54,16 @@ export class ResultsComponent implements OnInit{
               var newString = parsedStr.replace(/_/gi, "/"); //get url from the filename
               data[_i] = newString; 
             }
-            this.myHero = data; 
-            var mylen = this.myHero.length;
-            var end = performance.now();
-            this.callTime  = "Call took " + (end - start) + " milliseconds to get "+mylen +" results";
+            this.Results = data; 
+            var mylen = this.Results.length;
+            var end = performance.now(); //to check the end time of function call
+            this.callTime  = "It took " + (end - start).toFixed(2) + " milliseconds to get "+ mylen+" results!";
+          
         }
       }
-      }
+    }
     });  
   }
-
   nightMode(){
     if(this.color == 1){
       this.cardColor = "blue";
@@ -79,7 +81,22 @@ export class ResultsComponent implements OnInit{
     this.numPerPage = this.numPerPage + 10;
     
   }
-}
+
+  getSearch(){
+    window.location.reload(true);
+  }
+  lessResults(){
+    if(this.numPerPage > 10){
+      this.numPerPage = this.numPerPage - 10;
+    }
+    else{
+    this.numPerPage = 10
+  }
+    
+  }
+  }
+
+
 
  
 

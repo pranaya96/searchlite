@@ -1,16 +1,24 @@
+<!--<header class="center">-->
+<body>
 <form>
-    <md-toolbar color="accent">
-        <span><img src="http://img.ctrlv.in/img/17/07/10/5963c1a4deb56.jpg" width = 200px height = 100px></span>
-        <span class="example-spacer"></span>
-        <md-toolbar-row>
-            <span>Home</span>
-            <span class="example-spacer"></span>
-            <i class="material-icons">home</i>
-            <i class="material-icons">account_box</i>
-          </md-toolbar-row>
-    </md-toolbar>
-    <div class="middle">
-        <md-input-container >
+  <button  md-button [mdMenuTriggerFor]="menu">
+    <md-icon >menu</md-icon>
+  </button>
+<md-menu #menu="mdMenu">
+  <button md-menu-item>Login</button>
+</md-menu>
+
+
+  <md-card class="example-card">
+    <md-card-header>
+      <div class="center">
+      <md-card-title> <img src="http://img.ctrlv.in/img/17/07/06/595e7ad3c17d3.png"> </md-card-title>
+    </div>
+     </md-card-header>
+
+    <md-card-content>
+      <div fxLayout="row" fxLayoutAlign="center center">
+      <md-input-container class="inputsize">
           <input mdInput
                  [(ngModel)]="term"
                  name="term"
@@ -18,9 +26,17 @@
                  type="text"
                  align="middle"
                  required>
-                 
-                 <a md-raised-button (click)="search()" [routerLink]="['/results', term]">
-           Search</a>
         </md-input-container>
-    </div>
+
+        <md-card-actions >
+           <a md-mini-fab (click)="search()" [routerLink]="['/results', term]">
+           <md-icon>search</md-icon></a>
+        </md-card-actions>
+      </div>
+    </md-card-content>
+
+  </md-card>
+
+
 </form>
+</body>
