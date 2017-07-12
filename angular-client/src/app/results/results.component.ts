@@ -35,29 +35,29 @@ export class ResultsComponent implements OnInit{
       this.callTime = '';
       //case when there is empty search
       if (term=="undefined"){
-        this.callTime = "No results found";
+        this.callTime = "Empty Search";
       }
       else{
-        for(var _i =0; _i < data.length; ++_i){
-          var parsedStr = data[_i].slice(3); //parse the filename 
-          var newString = parsedStr.replace(/_/gi, "/"); //get url from the filename
-          data[_i] = newString;
-          
-        }
-    
-        this.myHero = data; 
-        var mylen = this.myHero.length;
-        
         //case when there is no result for the query terms
-        if (mylen == 0){
+        if (data ==null){
           this.callTime = "No results found";
         }
-        
         else{
-          var end = performance.now();
-          this.callTime  = "Call took " + (end - start) + " milliseconds to get "+ mylen+" results";
-          
+          if(data.length == 0){
+            this.callTime = "No results found";
+          }
+          else{
+            for(var _i =0; _i < data.length; ++_i){
+              var parsedStr = data[_i].slice(3); //parse the filename 
+              var newString = parsedStr.replace(/_/gi, "/"); //get url from the filename
+              data[_i] = newString; 
+            }
+            this.myHero = data; 
+            var mylen = this.myHero.length;
+            var end = performance.now();
+            this.callTime  = "Call took " + (end - start) + " milliseconds to get "+mylen +" results";
         }
+      }
       }
     });  
   }
