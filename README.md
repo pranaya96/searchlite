@@ -1,16 +1,17 @@
 # GOT qWest
 ### Team
-
   * Pranaya Adhikari
   * Victoria Velazquez
   * Ashley Mckoy
   * Kyle Frederick  
 ### Features
- * Theme of Spongebob
+ * Theme of Spongebob:
  * HyperLinks 
  * Side-bar for Search
  * Night mode
  * Number of Results per page
+
+
 
   
 
